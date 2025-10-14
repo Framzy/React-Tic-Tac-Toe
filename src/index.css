@@ -5,4 +5,18 @@
     @apply w-12 h-12 p-8 flex items-center justify-center text-2xl font-bold text-[#000000] bg-[#ffffff]
     border-3 border-[#000000] hover:bg-[#164950] hover:text-[#ffffff] cursor-pointer;
   }
+  .button-move {
+    @apply w-40 h-8 cursor-pointer;
+  }
+}
+.game-info::-webkit-scrollbar {
+  width: 5px;
+}
+.game-info::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
