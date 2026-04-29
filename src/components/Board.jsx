@@ -13,14 +13,16 @@ export default function Board({ xIsNext, squares, onPlay }) {
 
   return (
     <>
-      <div className="board grid grid-cols-3 gap-1">
-        {squares.map((square, index) => (
-          <Square
-            key={index}
-            value={square}
-            onSquareClick={() => handleClick(index)}
-          />
-        ))}
+      <div className="bg-[var(--color-primary)] w-65 h-65  flex justify-center items-center border-2 border-[var(--color-secondary)] rounded-2xl shadow-md">
+        <div className="grid grid-cols-3 gap-2">
+          {squares.map((square, index) => (
+            <Square
+              key={index}
+              value={square}
+              onSquareClick={() => handleClick(index)}
+            />
+          ))}
+        </div>
       </div>
     </>
   );

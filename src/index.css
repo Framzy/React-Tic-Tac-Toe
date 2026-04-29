@@ -1,22 +1,31 @@
 @import "tailwindcss";
 
-@layer components {
-  .square {
-    @apply w-12 h-12 p-8 flex items-center justify-center text-2xl font-bold text-[#000000] bg-[#ffffff]
-    border-3 border-[#000000] hover:bg-[#164950] hover:text-[#ffffff] cursor-pointer;
-  }
-  .button-move {
-    @apply w-40 h-8 cursor-pointer;
-  }
+:root {
+  font-family: "Poppins", sans-serif;
+
+  --color-primary: #3f489c;
+  --color-secondary: #2b26ad;
+
+  --scrollbar-size: 6px;
+  --scrollbar-thumb: #5a67db;
+  --scrollbar-track: transparent;
 }
-.game-info::-webkit-scrollbar {
-  width: 5px;
+
+.custom-scrollbar {
+  overflow-y: scroll;
+  cursor: pointer;
 }
-.game-info::-webkit-scrollbar-thumb {
-  background: #ffffff;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+
+/* Chrome / Edge / Safari */
+.custom-scrollbar::-webkit-scrollbar {
+  width: var(--scrollbar-size);
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: var(--scrollbar-radius);
 }
