@@ -1,4 +1,5 @@
 import { calculateWinner } from "../logic/utils/calculateWinner";
+import matchHistoryIcon from "../assets/match-history-icon.webp";
 
 export default function Status({ xIsNext, squares }) {
   const winner = calculateWinner(squares);
@@ -17,7 +18,12 @@ export default function Status({ xIsNext, squares }) {
 
   return (
     <>
-      <div className="status mb-4 font-bold text-[#d7d7d7]">{status}</div>
+      <div className="w-full flex items-center p-3 bg-[var(--color-primary)] border-2 border-[var(--color-secondary)] rounded-xl shadow-md">
+        <img src={matchHistoryIcon} alt="Move History" className="w-6 h-6" />
+        <p className="flex-1 text-white text-md text-center font-bold">
+          {status}
+        </p>
+      </div>
     </>
   );
 }

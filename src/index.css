@@ -6,6 +6,12 @@
   --color-primary: #3f489c;
   --color-secondary: #2b26ad;
 
+  --topLayout-width: clamp(18rem, 42vw, 24rem);
+  --bottomLayout-width: clamp(18rem, 42vw, 24rem);
+
+  --board-size: clamp(18rem, 42vw, 24rem);
+  --history-width: clamp(18rem, 42vw, 24rem);
+
   --scrollbar-size: 6px;
   --scrollbar-thumb: #5a67db;
   --scrollbar-track: transparent;
