@@ -7,7 +7,7 @@ export default function GameInfo({ jumpTo, moves }) {
     <div className="game-info flex flex-col items-center gap-2 w-full max-w-[var(--history-width)] h-full aspect-square">
       <section className="w-full">
         <div className="flex items-center p-3 bg-[var(--color-primary)] border-2 border-[var(--color-secondary)] rounded-xl shadow-md">
-          <img src={matchHistoryIcon} alt="Move History" className="w-6 h-6" />
+          <img src={matchHistoryIcon} alt="Move History" className="w-6" />
           <p className="flex-1 text-white text-md text-center font-bold">
             Match History
           </p>
