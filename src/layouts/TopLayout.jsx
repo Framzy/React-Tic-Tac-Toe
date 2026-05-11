@@ -10,7 +10,7 @@ export default function TopLayout({
 }) {
   return (
     <>
-      <div className="w-full flex flex-col sm:flex-row justify-center items-center gap-5 ">
+      <div className="w-full flex flex-col sm:flex-row justify-center items-center gap-5">
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
         <GameInfo jumpTo={jumpTo} moves={moves} />
       </div>
