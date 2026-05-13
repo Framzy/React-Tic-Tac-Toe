@@ -8,7 +8,7 @@ export default function ResetButtton({ resetGame }) {
         onClick={resetGame}
       >
         <img src={matchHistoryIcon} alt="Move History" className="w-6 h-6" />
-        <p className="flex-1 text-white text-md text-center font-bold">
+        <p className="flex-1 text-white text-sm sm:text-md text-center font-bold">
           Restart Game
         </p>{" "}
       </button>
