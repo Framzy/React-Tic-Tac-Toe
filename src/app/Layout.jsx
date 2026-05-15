@@ -5,12 +5,12 @@ import background from "../assets/background.webp";
 import StarsBackground from "../components/background/StarsBackground";
 import TopLayout from "../layouts/TopLayout";
 import BottomLayout from "../layouts/BottomLayout";
+import ResultModal from "../components/modal/ResultModal";
+import { calculateWinner } from "../logic/utils/calculateWinner";
 
 export default function Layout() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
-
   const stars = isMobile ? mobileStars : desktopStars;
-
   const { xIsNext, currentSquares, handlePlay, jumpTo, moves, resetGame } =
     useGameLogic();
 
@@ -21,6 +21,17 @@ export default function Layout() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  let result = null;
+
+  const winner = calculateWinner(currentSquares);
+  const boardFull = currentSquares.every(Boolean);
+  const isDraw = !winner && boardFull;
+  if (winner) {
+    result = winner;
+  } else if (isDraw) {
+    result = "draw";
+  }
 
   return (
     <main className="relative min-h-screen w-full flex justify-center items-center overflow-hidden">
@@ -59,6 +70,9 @@ export default function Layout() {
           />
         </div>
       </div>
+
+      {/* Layer 4: Winner Modal */}
+      <ResultModal result={result} isOpen={!!result} onReset={resetGame} />
     </main>
   );
 }
