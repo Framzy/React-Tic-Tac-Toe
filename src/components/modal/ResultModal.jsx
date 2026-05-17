@@ -6,7 +6,6 @@ export default function ResultModal({ result, isOpen, onReset }) {
       {isOpen && (
         <motion.div
           className="fixed inset-0 z-50 flex items-center justify-center px-4"
-          initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
@@ -17,7 +16,7 @@ export default function ResultModal({ result, isOpen, onReset }) {
           <motion.div
             initial={{
               opacity: 0,
-              scale: 1,
+              scale: 0.5,
               y: 0,
             }}
             animate={{
@@ -31,8 +30,8 @@ export default function ResultModal({ result, isOpen, onReset }) {
               y: 0,
             }}
             transition={{
-              duration: 0.5,
-              ease: "easeInOut",
+              duration: 0.3,
+              ease: "easeOut",
             }}
             className="
               relative z-10
