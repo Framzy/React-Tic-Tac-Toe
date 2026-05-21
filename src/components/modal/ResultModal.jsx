@@ -17,17 +17,14 @@ export default function ResultModal({ result, isOpen, onReset }) {
             initial={{
               opacity: 0,
               scale: 0.5,
-              y: 0,
             }}
             animate={{
               opacity: 1,
               scale: 1,
-              y: 0,
             }}
             exit={{
               opacity: 0,
               scale: 1,
-              y: 0,
             }}
             transition={{
               duration: 0.3,
@@ -35,32 +32,38 @@ export default function ResultModal({ result, isOpen, onReset }) {
             }}
             className="
               relative z-10
-              w-full max-w-sm
+              w-xs md:w-full max-w-md 
               rounded-3xl
-              border border-white/10
+              border border-[var(--color-secondary)]
               bg-[var(--color-primary)]
               backdrop-blur-xl
               px-8 py-10
+              gap-1
+              flex flex-col items-center
               shadow-2xl
               text-center
             "
           >
-            <h2 className="text-3xl font-extrabold text-white">
-              {result === "draw" ? "It's a Draw!" : `Player ${result} Wins!`}
+            <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+              {result === "draw" ? "It's a Draw!" : `${result} Player Wins!`}
             </h2>
 
-            <p className="mt-2 text-sm text-white/70">Amazing move!</p>
+            <p className=" text-xs md:text-sm text-white/70">
+              {result === "draw"
+                ? "No one wins this time. Try again!"
+                : "Amazing  Move! "}
+            </p>
 
             <button
               onClick={onReset}
               className="
-                mt-8
-                rounded-full
-                bg-white/40
+                mt-3
+                rounded-xl
+                bg-white/65
                 px-6 py-3
-                text-sm font-semibold text-white
+                text-xs md:text-sm font-bold text-[var(--color-primary)]
                 transition
-                hover:bg-white/30
+                hover:bg-white
                 cursor-pointer
               "
             >
